@@ -1,0 +1,36 @@
+version: 2 
+ 
+models: 
+ - name: src_bronze_clientes 
+   description: > 
+     Vista sobre archivos Parquet de bronze. 
+     Conserva histórico y metadata técnica. 
+ 
+   columns: 
+     - name: documento_normalizado 
+       description: "Documento normalizado recibido desde landing." 
+       data_tests: 
+         - not_null 
+         - not_empty_string 
+ 
+     - name: source_file 
+       description: "Archivo CSV original." 
+       data_tests: 
+         - not_null 
+         - not_empty_string 
+ 
+     - name: ingestion_ts 
+       description: "Timestamp de ingesta." 
+       data_tests: 
+         - not_null 
+ 
+     - name: batch_id 
+       description: "Identificador de lote." 
+       data_tests: 
+         - not_null 
+         - not_empty_string 
+ 
+     - name: row_number_in_file 
+       description: "Número de fila en el archivo." 
+       data_tests: 
+         - not_null

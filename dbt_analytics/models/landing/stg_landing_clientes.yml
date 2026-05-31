@@ -1,39 +1,39 @@
 version: 2
 models:
-- name: stg_landing_clientes
-description: >
-Modelo de landing que lee el CSV recibido,
-normaliza campos mínimos y permite validar calidad
-antes de avanzar a bronze.
-config:
-tags: ["landing_quality"]
-columns:
-- name: tipo_documento
-description: "Tipo de documento informado en el archivo."
-data_tests:
-- not_null
-- not_empty_string
-- accepted_values:
-arguments:
-values: ["CUIT", "DNI"]
-- name: documento
-description: "Documento original recibido."
-data_tests:
-- not_null
-- not_empty_string
-- name: documento_normalizado
-description: "Documento sin guiones, puntos, espacios ni caracteres no numéricos."
-data_tests:
-- not_null
-- not_empty_string
-- unique
-- name: nombre
-description: "Nombre o razón social."
-data_tests:
-- not_null
-- not_empty_string
-- name: cp
-description: "Código postal."
-data_tests:
-- not_null
-- not_empty_string
+  - name: stg_landing_clientes
+    description: >
+      Modelo de landing que lee el CSV recibido,
+      normaliza campos mínimos y permite validar calidad
+      antes de avanzar a bronze.
+    config:
+      tags: ["landing_quality"]
+    columns:
+      - name: tipo_documento
+        description: "Tipo de documento informado en el archivo."
+        data_tests:
+          - not_null
+          - not_empty_string
+          - accepted_values:
+              arguments:
+                values: ["CUIT", "DNI"]
+      - name: documento
+        description: "Documento original recibido."
+        data_tests:
+          - not_null
+          - not_empty_string
+      - name: documento_normalizado
+        description: "Documento sin guiones, puntos, espacios ni caracteres no numéricos."
+        data_tests:
+          - not_null
+          - not_empty_string
+          - unique
+      - name: nombre
+        description: "Nombre o razón social."
+        data_tests:
+          - not_null
+          - not_empty_string
+      - name: cp
+        description: "Código postal."
+        data_tests:
+          - not_null
+          - not_empty_string

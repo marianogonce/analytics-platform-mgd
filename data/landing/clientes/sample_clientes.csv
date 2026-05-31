@@ -1,0 +1,12 @@
+tipo_documento,documento,nombre,direccion,cp
+CUIT,20-12345678-3,Juan Perez,Av Corrientes 1234,1043
+DNI,23456789,Maria Gomez,Calle San Martin 567,1043
+CUIT,30-34567890-5,Comercial Norte SA,Av Santa Fe 890,1059
+DNI,45678901,Lucia Fernandez,Belgrano 345,5500
+DNI,56789012,Carlos Lopez,Mitre 222,5000
+CUIT,30-67890123-8,Servicios del Sur SRL,Rivadavia 789,7600
+DNI,78901234,Ana Martinez,Sarmiento 111,2000
+DNI,89012345,Pedro Alvarez,25 de Mayo 456,8300
+CUIT,33-90123456-1,Logistica Pampeana SA,Italia 678,9400
+DNI,01234567,Sofia Ruiz,Las Heras 999,4000
+

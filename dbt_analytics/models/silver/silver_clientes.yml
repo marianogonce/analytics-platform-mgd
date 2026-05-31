@@ -1,0 +1,41 @@
+version: 2 
+ 
+models: 
+ - name: silver_clientes 
+   description: > 
+     Maestro vigente de clientes. 
+     Mantiene una sola fila por documento normalizado. 
+ 
+   columns: 
+     - name: cliente_documento 
+       description: "Clave normalizada del cliente." 
+       data_tests: 
+         - not_null 
+         - not_empty_string 
+         - unique 
+ 
+     - name: tipo_documento 
+       description: "Tipo de documento." 
+       data_tests: 
+         - not_null 
+         - not_empty_string 
+         - accepted_values: 
+             arguments: 
+               values: ["CUIT", "DNI"] 
+ 
+     - name: cliente_nombre 
+       description: "Nombre o razón social vigente." 
+       data_tests: 
+         - not_null 
+         - not_empty_string 
+ 
+     - name: codigo_postal 
+       description: "Código postal vigente." 
+       data_tests: 
+         - not_null 
+         - not_empty_string 
+ 
+     - name: ingestion_ts 
+       description: "Timestamp de ingesta del registro vigente." 
+       data_tests: 
+         - not_null 

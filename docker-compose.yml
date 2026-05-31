@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  dbt:
+    build: .
+    container_name: dbt-duckdb
+    volumes:
+      - ./:/app
+      - ./db:/db
+      - ./data:/data
+    working_dir: /app
+    # environment:
+    #   DBT_PROFILES_DIR: /app
+    command: sh -c "dbt run --profiles-dir . && dbt test --profiles-dir ."
+    # Si quieres correr otros comandos, reemplaza la línea de 'command'
+    # Ejemplo: command: dbt run --profiles-dir .

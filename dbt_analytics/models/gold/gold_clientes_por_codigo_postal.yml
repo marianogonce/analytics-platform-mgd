@@ -1,0 +1,20 @@
+version: 2 
+ 
+models: 
+ - name: gold_clientes_por_codigo_postal 
+   description: > 
+     Tabla analítica final con cantidad de clientes vigentes 
+     por código postal. 
+ 
+   columns: 
+     - name: codigo_postal 
+       description: "Código postal agrupado." 
+       data_tests: 
+         - not_null 
+         - not_empty_string 
+         - unique 
+ 
+     - name: cantidad_clientes 
+       description: "Cantidad de clientes vigentes." 
+       data_tests: 
+         - not_null
