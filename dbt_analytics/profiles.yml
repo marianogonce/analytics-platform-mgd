@@ -1,0 +1,17 @@
+# Perfil de conexión usado por dbt.
+analytics_platform:
+target: dev
+outputs:
+dev:
+# Adaptador para usar DuckDB.
+type: duckdb
+# Archivo DuckDB local.
+# Todavía no existe. dbt/DuckDB lo crearán luego.
+path: "../db/warehouse.duckdb"
+# Schema por defecto.
+schema: main
+# Threads de ejecución local.
+threads: 4
+# Extensión para leer/escribir Parquet.
+extensions:
+- parquet

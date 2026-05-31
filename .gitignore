@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+# Entorno virtual
+.venv/
+# Variables locales
+.env
+# Bases locales DuckDB
+*.duckdb
+*.duckdb.wal
+*.db
+# Carpeta db: versionamos solo .gitkeep
+db/*
+!db/.gitkeep
+# Artefactos generados por dbt
+dbt_analytics/target/
+dbt_analytics/logs/
+dbt_analytics/dbt_packages/
+# Landing: versionamos solo estructura y CSV de ejemplo
+data/landing/*
+!data/landing/clientes/
+data/landing/clientes/*
+!data/landing/clientes/.gitkeep
+!data/landing/clientes/sample_clientes.csv
+# Bronze: no versionamos Parquet generados
+data/bronze/*
+!data/bronze/clientes/
+data/bronze/clientes/*
+!data/bronze/clientes/.gitkeep
+# Archive
+data/archive/*
+!data/archive/clientes/
+data/archive/clientes/*
+!data/archive/clientes/.gitkeep
+# Reject
+data/reject/*
+!data/reject/clientes/
+data/reject/clientes/*
+!data/reject/clientes/.gitkeep

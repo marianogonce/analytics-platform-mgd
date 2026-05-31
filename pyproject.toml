@@ -1,0 +1,19 @@
+# Configuración mínima del proyecto Python.
+# Documenta versión esperada de Python y dependencias principales.
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "analytics-platform"
+version = "0.1.0"
+requires-python = "==3.12.*"
+dependencies = [
+"dagster",
+"dagster-webserver",
+"dagster-dbt",
+"duckdb",
+"dbt-core",
+"dbt-duckdb",
+"pyyaml",
+"pytest",
+]
