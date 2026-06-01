@@ -18,7 +18,14 @@ COPY pyproject.toml ./
 
 # Instala dependencias Python como root
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir dbt-core==1.11.9 dbt-duckdb
+RUN pip install --no-cache-dir \
+    dagster \
+    dagster-webserver \
+    dagster-dbt \
+    dbt-core==1.11.9 \
+    dbt-duckdb \
+    duckdb \
+    pyyaml
 # Si tienes requirements.txt, descomenta la siguiente línea:
 # RUN pip install --no-cache-dir -r requirements.txt
 

@@ -3,6 +3,8 @@ services:
   dbt:
     build: .
     container_name: dbt-duckdb
+    ports:
+      - "3000:3000"
     volumes:
       - ./:/app
       - ./db:/db
@@ -10,6 +12,6 @@ services:
     working_dir: /app
     # environment:
     #   DBT_PROFILES_DIR: /app
-    command: sh -c "dbt run --profiles-dir . && dbt test --profiles-dir ."
+    command: sh -c "python -m dagster dev -h 0.0.0.0 -p 3000 -m dagster_project.definitions"
     # Si quieres correr otros comandos, reemplaza la línea de 'command'
     # Ejemplo: command: dbt run --profiles-dir .
