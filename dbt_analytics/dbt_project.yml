@@ -14,21 +14,14 @@ macro-paths: ["macros"]
 test-paths: ["tests"]
 # Carpetas que dbt puede limpiar con dbt clean.
 clean-targets:
-- "target"
-- "dbt_packages"
-- "logs"
+  - "target"
+  - "dbt_packages"
+  - "logs"
 # Variables reutilizables.
-# var("landing_clientes_path") leerá la ruta del CSV.
-# var("bronze_clientes_glob") leerá la ruta de los Parquet bronze.
 vars:
-landing_clientes_path: "../data/landing/clientes/sample_clientes.csv"
-bronze_clientes_glob: "../data/bronze/clientes/*/*.parquet"
+  landing_clientes_path: "../data/landing/clientes/sample_clientes.csv"
+  bronze_clientes_glob: "../data/bronze/clientes/*/*.parquet"
 # Configuración por defecto de modelos.
 models:
-analytics_platform:
-+materialized: view
-var() en dbt sirve para leer variables definidas en dbt_project.yml.
-Ejemplo:
-{{ var("landing_clientes_path") }}
-dbt reemplaza eso por:
-../data/landing/clientes/sample_clientes.csv
+  analytics_platform:
+    +materialized: view
